@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timmer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="stopwatch">
+        <h1 id="displaytag">00:00:00</h1>
+        <div class="button">
+            <img src="stop-button.png" onclick="stop()" >
+            <img src="play.png" onclick="watchStart()">
+            <img src="reset.png" onclick=" watchReset()" >
+        </div>
+    </div>
+</body>
+<script>
+    let [seconds,minutes,hours] = [0,0,0];
+let displaytag = document.getElementById("displaytag");
+let timert = null;
+
+function stopwatch(){
+    seconds++;
+    if(seconds == 60){
+        seconds = 0;
+        minutes++;
+        if(minutes == 60){
+            minutes = 0;
+            hours++;
+        }
+    }
+     let h = hours < 10 ? "0"+hours  : hours;
+     let m = minutes < 10 ? "0"+minutes  : minutes;
+     let s =seconds < 10 ? "0"+seconds  : seconds;
+
+
+
+
+
+
+    displaytag.innerHTML = h +":"+ m + ":"+ s
+}
+function watchStart(){
+    if(timert!== null){
+        clearInterval(timert);
+    }
+timert = setInterval(stopwatch,1000)
+}
+
+function watchReset(){
+    clearInterval(timert);
+   [seconds,minutes,hours] = [0,0,0];
+   displaytag.innerHTML= "00:00:00"
+
+}
+function stop(){
+    clearInterval(timert);
+}
+</script>
+</html>

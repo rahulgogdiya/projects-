@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(img/download.jpg) ;
+    background-position: center;
+    background-size: cover;
+}
+.contant button{
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    padding: 20px 40px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 10px;
+    cursor: pointer;
+
+}
+.contant button:hover{
+ background-color: aqua;
+ transition: 0.8s ;
+ font-size:1.2rem ;
+ outline: none;
+ letter-spacing: normal;
+ box-shadow: 4px 12px 10px;
+}
+
+.launch-time{
+    display: flex;
+}
+.launch-time div{
+    flex-basis: 100px;
+    color: aliceblue;
+}
+.launch-time div p{
+    position: absolute;
+    top: 30%;
+    margin-left: 60px;
+    font-size: 60px;
+    letter-spacing: 5px;
+  
+}
+ span{
+    position: absolute;
+    top: 40%;
+    margin-left: 70px;
+    font-size: 15px;
+}
+.rocket{
+    position: absolute;
+    right: 10%;
+   width:  250px;
+    bottom: 0;
+    animation: rocket 4s linear infinite;
+}
+@keyframes rocket{
+    0%{
+        bottom: 0;
+        opacity: 0;
+    }
+  100%{
+    bottom: 105%;
+    opacity:1 ;
+  }
+}

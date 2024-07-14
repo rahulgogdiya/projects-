@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="box">
+      <input type="password" id="password" placeholder="password" />
+      <img src="eye.png" id="iconeye" >
+    </div>
+    <script>
+        let password =  document.getElementById("password");
+        let iconeye =  document.getElementById("iconeye");
+
+        iconeye.onclick = function(){
+            if(password.type == "password"){
+                password.type="text";
+                iconeye.src = "eye-close-up.png"
+            }else{
+                password.type = "password"
+                iconeye.src = "eye.png"
+            }
+        }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="gallary-wrap">
+        <img src="61eEetcCb9L._AC_SY200_.jpg" id="left">
+
+        <div class="gallary">
+            <div>
+              <span><img src="8.jpg" /></span>
+              <span><img src="7.jpg" /></span>
+              <span><img src="5.jpg" /></span>
+            </div>
+            <div>
+              <span><img src="6.jpg" /></span>
+              <span><img src="4.jpg" /></span>
+              <span><img src="3.jpg" /></span>
+            </div>
+          </div>
+
+        <img src="location-dot-solid.svg" id="right">
+    </div>
+    <script>
+        let scrollContainer = document.querySelector(".gallary");
+        let left = document.getElementById("left");
+        let right = document.getElementById("right");
+
+        scrollContainer.addEventListener("wheel", (evt) =>{
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+        });
+         
+    </script>
+  </body>
+</html>
